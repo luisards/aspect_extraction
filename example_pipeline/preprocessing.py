@@ -2,10 +2,10 @@
 pre-processing step."""
 import logging
 import json
-
+import glob
 from gensim.models import Word2Vec
-from cat.fragments import create_noun_counts
-from cat.utils import conll2text
+from cat.cat.fragments import create_noun_counts
+from cat.cat.utils import conll2text
 from collections import Counter
 
 logging.basicConfig(level=logging.INFO)
@@ -13,12 +13,12 @@ logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
 
-    paths = ["data/my_data.conllu"]
-    create_noun_counts(paths,
-                       "data/nouns.json")
-    conll2text(paths, "data/all_txt.txt")
+    #paths = ["data/my_data.conllu"]
+    files = glob.glob("../data/my_data/*conllu")
+    create_noun_counts(files, "../data/nouns.json")
+    conll2text(files, "../data/all_txt.txt")
     corpus = [x.lower().strip().split()
-              for x in open("data/all_txt.txt")]
+              for x in open("../data/all_txt.txt")]
 
     f = Word2Vec(corpus,
                  sg=0,

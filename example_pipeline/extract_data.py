@@ -19,4 +19,4 @@ def extractXML(folder, out_dir):
             f.close()
 
 if __name__ == "__main__":
-    extractXML("C:/Users/PC/anaconda3/envs/rnlp/cat/cat/data", 'C:/Users/PC/anaconda3/envs/rnlp/cat/cat/data/cleanData/')
+    extractXML("C:/Users/luisa/anaconda3/envs/cat/cat/data", 'C:/Users/PC/anaconda3/envs/cat/cat/data/cleanData/')
