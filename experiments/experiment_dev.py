@@ -15,7 +15,7 @@ BEST_RBF = {"n_noun": 200}
 if __name__ == "__main__":
 
     scores = defaultdict(dict)
-    r = Reach.load("embeddings/my_word_vectors.vec",
+    r = Reach.load("../embeddings/my_word_vectors.vec",
                    unk_word="<UNK>")
 
     att = rbf_attention
