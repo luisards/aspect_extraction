@@ -17,17 +17,17 @@ BEST_RBF = {"n_noun": 200}
 if __name__ == "__main__":
 
     scores = defaultdict(dict)
-    r = Reach.load("embeddings/restaurant_vecs_w2v.vec",
+    r = Reach.load("../embeddings/my_word_vectors.vec",
                    unk_word="<UNK>")
 
-    d = json.load(open("data/nouns_restaurant.json"))
+    d = json.load(open("../data/nouns_restaurant.json"))
 
     nouns = Counter()
     for k, v in d.items():
         if k.lower() in r.items:
             nouns[k.lower()] += v
 
-    embedding_paths = ["embeddings/restaurant_vecs_w2v.vec"]
+    embedding_paths = ["../embeddings/my_word_vectors.vec"]
     bundles = ((rbf_attention, attention), embedding_paths)
 
     for att, path in product(*bundles):
