@@ -35,7 +35,7 @@ def loader(instance_path,
 
 
 rest_14_test = partial(loader,
-                       instance_path="data/restaurant_test_2014_tok.txt",  # noqa
+                       instance_path="../data/cleanData/Restaurants_Test_Semeval2014.txt",  # noqa
                        label_path="data/labels_restaurant_test_2014.txt",  # noqa
                        subset_labels={"ambience",
                                       "service",
@@ -43,32 +43,32 @@ rest_14_test = partial(loader,
 
 
 rest_14_train = partial(loader,
-                        instance_path="data/restaurant_train_2014.txt",  # noqa
-                        label_path="data/labels_restaurant_train_2014.txt",  # noqa
+                        instance_path="../data/cleanData/Restaurants_Train_v2_Semeval2014.txt",  # noqa
+                        label_path="../data/labels_restaurant_train_2014.txt",  # noqa
                         subset_labels={"ambience",
                                        "service",
                                        "food"})
 
 
 ganu_test = partial(loader,
-                    instance_path="data/test_tok.txt",
-                    label_path="data/test_label.txt",
+                    instance_path="../data/cleanData/Restaurants_Test_Citysearch.txt",
+                    label_path="../data/label_Restaurants_Test_Citysearch.txt",
                     subset_labels={"ambience",
                                    "staff",
                                    "food"})
 
 
 rest_15_train = partial(loader,
-                        instance_path="data/restaurant_train_2015_tok.txt",
-                        label_path="data/labels_restaurant_train_2015.txt",
+                        instance_path="../data/cleanData/Restaurants_Train_Semeval2015.txt",
+                        label_path="../data/labels_restaurant_train_2015.txt",
                         subset_labels={"ambience",
                                        "service",
                                        "food"},
                         split_labels=True)
 
 rest_15_test = partial(loader,
-                       instance_path="data/restaurant_test_2015_tok.txt",
-                       label_path="data/labels_restaurant_test_2015.txt",
+                       instance_path="../data/cleanData/Restaurants_Test_Semeval2015.txt",
+                       label_path="../data/labels_restaurant_test_2015.txt",
                        subset_labels={"ambience",
                                       "service",
                                       "food"},
