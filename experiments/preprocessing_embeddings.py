@@ -11,12 +11,12 @@ logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
 
-    paths = ["data/restaurant_train.conllu"]
+    paths = ["../data/my_data/Restaurants_Train_v2_Semeval2014.conllu"]
     create_noun_counts(paths,
-                       "data/nouns_restaurant.json")
-    conll2text(paths, "data/all_txt_restaurant.txt")
+                       "../data/nouns_restaurant.json")
+    conll2text(paths, "../data/all_txt_restaurant.txt")
     corpus = [x.lower().strip().split()
-              for x in open("data/all_txt_restaurant.txt")]
+              for x in open("../data/all_txt_restaurant.txt")]
 
     f = Word2Vec(corpus,
                  sg=0,
@@ -27,4 +27,4 @@ if __name__ == "__main__":
                  iter=5,
                  workers=10)
 
-    f.wv.save_word2vec_format(f"embeddings/restaurant_vecs_w2v.vec")
+    f.wv.save_word2vec_format(f"../embeddings/my_word_vectors.vec")
