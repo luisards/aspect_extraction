@@ -2,7 +2,6 @@ from xml.etree import cElementTree as ET
 import os
 def extractXML(folder, out_dir):
     files = os.listdir(folder)
-    count = 0
     for filename in files:
         if 'xml' in filename:
             dir = os.path.join(folder, filename)
@@ -19,4 +18,4 @@ def extractXML(folder, out_dir):
             f.close()
 
 if __name__ == "__main__":
-    extractXML("C:/Users/luisa/anaconda3/envs/cat/cat/data", 'C:/Users/PC/anaconda3/envs/cat/cat/data/cleanData/')
+    extractXML("../data", '../data/cleanData/')
